@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMonitor", "WebMonitor\WebMonitor.csproj", "{6B6ABD35-A84F-4658-A77A-D903D936978B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMonitor.Data", "WebMonitor.Data\WebMonitor.Data.csproj", "{4F624A5A-03E8-47F0-974D-CFC3E6110879}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6B6ABD35-A84F-4658-A77A-D903D936978B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B6ABD35-A84F-4658-A77A-D903D936978B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B6ABD35-A84F-4658-A77A-D903D936978B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F624A5A-03E8-47F0-974D-CFC3E6110879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F624A5A-03E8-47F0-974D-CFC3E6110879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F624A5A-03E8-47F0-974D-CFC3E6110879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F624A5A-03E8-47F0-974D-CFC3E6110879}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
