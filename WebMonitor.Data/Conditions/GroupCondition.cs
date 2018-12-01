@@ -4,15 +4,15 @@ using System.Linq;
 
 namespace WebMonitor.Data.Conditions
 {
-	public class GroupCondition<T> : ICondition<T>
+	public class GroupCondition : ICondition
 	{
 		public Combinator Combinator { get; private set; }
-		public readonly List<ICondition<T>> Conditions = new List<ICondition<T>>();
+		public readonly List<ICondition> Conditions = new List<ICondition>();
 
-		public GroupCondition(params ICondition<T>[] conditions)
+		public GroupCondition(params ICondition[] conditions)
 			: this(Combinator.And, conditions) { }
 
-		public GroupCondition(Combinator combinator, params ICondition<T>[] conditions)
+		public GroupCondition(Combinator combinator, params ICondition[] conditions)
 		{
 			if (conditions == null || conditions.Length < 2)
 				throw new ArgumentException("At least 2 conditions are expected", nameof(conditions));
@@ -21,7 +21,7 @@ namespace WebMonitor.Data.Conditions
 			Conditions.AddRange(conditions);
 		}
 		
-		public bool IsMet(T input)
+		public bool IsMet(object input)
 		{
 			if (Combinator == Combinator.And)
 				return Conditions.All(condition => condition.IsMet(input));

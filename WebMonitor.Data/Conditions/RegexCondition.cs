@@ -2,7 +2,7 @@
 
 namespace WebMonitor.Data.Conditions
 {
-	public class RegexCondition: ICondition<string>
+	public class RegexCondition: BaseCondition<string>
 	{
 		public Regex Regex { get; private set; }
 
@@ -11,7 +11,7 @@ namespace WebMonitor.Data.Conditions
 			Regex = regex;
 		}
 
-		public bool IsMet(string input)
+		public override bool IsMet(string input)
 		{
 			return Regex.IsMatch(input);
 		}
