@@ -57,8 +57,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Infrastructure\AsyncCommand.cs" />
+    <Compile Include="Infrastructure\AsyncCommandBase.cs" />
+    <Compile Include="Infrastructure\ActionCommand.cs" />
+    <Compile Include="Infrastructure\IAsyncCommand.cs" />
     <Compile Include="ViewModels\ConditionViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ResourceViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,6 +109,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebMonitor.Data\WebMonitor.Data.csproj">
+      <Project>{4F624A5A-03E8-47F0-974D-CFC3E6110879}</Project>
+      <Name>WebMonitor.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WebMonitor.ViewModels;
 
 namespace WebMonitor
 {
@@ -26,6 +27,7 @@ namespace WebMonitor
 		public MainWindow()
 		{
 			InitializeComponent();
+			DataContext = new MainWindowViewModel();
 			
 			TrayIcon = new NotifyIcon
 			{
