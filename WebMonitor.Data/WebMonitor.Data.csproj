@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Conditions\BaseCondition.cs" />
     <Compile Include="Conditions\Combinator.cs" />
+    <Compile Include="Conditions\NotCondition.cs" />
     <Compile Include="Conditions\GroupCondition.cs" />
     <Compile Include="Conditions\ICondition.cs" />
     <Compile Include="Conditions\RegexCondition.cs" />

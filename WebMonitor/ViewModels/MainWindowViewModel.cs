@@ -22,7 +22,9 @@ namespace WebMonitor.ViewModels
 
 		public void AddNewResource()
 		{
-			Resources.Add(new ResourceViewModel());
+			var vm = new ResourceViewModel();
+			vm.ResourceUrl = "resource url goes here...";
+			Resources.Add(vm);
 		}
 	}
 }

@@ -13,9 +13,11 @@ namespace WebMonitor.Data.Services
 	{
 		public async Task<string> ReadSource(string url, CancellationToken token)
 		{
-			HttpClient client = new HttpClient();
-			var message = await client.GetAsync(url, HttpCompletionOption.ResponseContentRead, token);
-			return await message.Content.ReadAsStringAsync();
+			using (var httpClient = new HttpClient())
+			{
+				var message = await httpClient.GetAsync(url, HttpCompletionOption.ResponseContentRead, token);
+				return await message.Content.ReadAsStringAsync();
+			}
 		}
 	}
 }

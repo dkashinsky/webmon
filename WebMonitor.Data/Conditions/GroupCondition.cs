@@ -4,29 +4,18 @@ using System.Linq;
 
 namespace WebMonitor.Data.Conditions
 {
-	public class GroupCondition : ICondition
+	public class NotCondition<T> : BaseCondition<T>
 	{
-		public Combinator Combinator { get; private set; }
-		public readonly List<ICondition> Conditions = new List<ICondition>();
+		public ICondition<T> Condition { get; private set; }
 
-		public GroupCondition(params ICondition[] conditions)
-			: this(Combinator.And, conditions) { }
-
-		public GroupCondition(Combinator combinator, params ICondition[] conditions)
+		public NotCondition(ICondition<T> condition)
 		{
-			if (conditions == null || conditions.Length < 2)
-				throw new ArgumentException("At least 2 conditions are expected", nameof(conditions));
-
-			Combinator = combinator;
-			Conditions.AddRange(conditions);
+			Condition = condition ?? throw new ArgumentException("Condition can't be null", nameof(condition));
 		}
 		
-		public bool IsMet(object input)
+		public override bool IsMet(T input)
 		{
-			if (Combinator == Combinator.And)
-				return Conditions.All(condition => condition.IsMet(input));
-			else
-				return Conditions.Any(condition => condition.IsMet(input));
+			return !Condition.IsMet(input);
 		}
 	}
 }
